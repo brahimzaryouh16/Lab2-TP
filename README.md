@@ -447,19 +447,3 @@ low-resolution dataset, the CNN is still the right default.
 
 ---
 
-## References
-
-1. Y. LeCun, L. Bottou, Y. Bengio, P. Haffner. *Gradient-based learning applied
-   to document recognition.* Proceedings of the IEEE, 1998.
-2. S. Ren, K. He, R. Girshick, J. Sun. *Faster R-CNN: Towards Real-Time Object
-   Detection with Region Proposal Networks.* NeurIPS, 2015.
-3. K. Simonyan, A. Zisserman. *Very Deep Convolutional Networks for Large-Scale
-   Image Recognition.* ICLR, 2015.
-4. A. Krizhevsky, I. Sutskever, G. E. Hinton. *ImageNet Classification with Deep
-   Convolutional Neural Networks.* NeurIPS, 2012.
-5. A. Dosovitskiy et al. *An Image is Worth 16x16 Words: Transformers for Image
-   Recognition at Scale.* ICLR, 2021.
-6. *Vision Transformers from Scratch (PyTorch): A Step-by-Step Guide*, Medium /
-   MLearning.ai (the tutorial followed for Part 2).
-7. torchvision documentation: `fasterrcnn_mobilenet_v3_large_fpn`, `vgg16`,
-   `alexnet`, `MNIST`.
