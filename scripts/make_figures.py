@@ -177,6 +177,39 @@ def frcnn_curves(data: dict) -> None:
     plt.close(fig)
 
 
+def vit_curves(data: dict) -> None:
+    if "vit" not in data:
+        return
+    d = data["vit"]
+    ep = [h["epoch"] for h in d["history"]]
+    loss = [h["train_loss"] for h in d["history"]]
+    acc = [h["test_accuracy"] * 100 for h in d["history"]]
+
+    fig, ax1 = plt.subplots(figsize=(8, 4.8))
+    ax1.plot(ep, loss, marker="o", ms=4, color="#9467bd",
+             label="train loss")
+    # PyTorch label smoothing 0.1 with 10 classes: true class 0.91, the
+    # other nine 0.01 each -> minimum CE = 0.500.
+    ax1.axhline(0.500, ls="--", lw=1.2, color="gray",
+                label="label-smoothing floor (~0.500)")
+    ax1.set(xlabel="epoch", ylabel="training loss (label smoothing 0.1)")
+    ax1.grid(alpha=0.3)
+
+    ax2 = ax1.twinx()
+    ax2.plot(ep, acc, marker="s", ms=4, color="#1f77b4",
+             label="test accuracy")
+    ax2.set_ylabel("test accuracy (%)")
+    ax2.set_ylim(78, 100)
+
+    lines = ax1.get_legend_handles_labels()[0] + ax2.get_legend_handles_labels()[0]
+    labels = ax1.get_legend_handles_labels()[1] + ax2.get_legend_handles_labels()[1]
+    ax1.legend(lines, labels, loc="center right", fontsize=8)
+    ax1.set_title("ViT on MNIST: the loss approaches the smoothing floor")
+    fig.tight_layout()
+    fig.savefig(OUT / "fig_vit_curves.png", dpi=150)
+    plt.close(fig)
+
+
 def per_class_f1(data: dict) -> None:
     models = [m for m in ("cnn", "vit", "vgg16", "alexnet") if m in data]
     if not models:
@@ -205,6 +238,7 @@ def main() -> None:
     comparison(data)
     convergence(data)
     frcnn_curves(data)
+    vit_curves(data)
     per_class_f1(data)
     print("figures written to", OUT)
 
