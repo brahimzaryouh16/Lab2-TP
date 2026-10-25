@@ -1,0 +1,9 @@
+# data / artifacts produced on Colab
+data/
+logs/
+results/smoke_*.json
+results/checkpoints/
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/

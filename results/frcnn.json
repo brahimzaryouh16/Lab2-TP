@@ -1,0 +1,202 @@
+{
+  "model": "frcnn",
+  "task": "detection",
+  "config": {
+    "model": "frcnn",
+    "data_dir": "/content/lab2/data",
+    "out": "results/frcnn.json",
+    "epochs": 3,
+    "batch_size": 8,
+    "lr": 0.005,
+    "weight_decay": 0.0005,
+    "train_subset": 8000,
+    "test_subset": 2000,
+    "img_size": 0,
+    "canvas": 128,
+    "seed": 0,
+    "num_workers": 2,
+    "device": "auto",
+    "label_smoothing": 0.0,
+    "augment": false,
+    "freeze_backbone": false,
+    "optimizer": "adamw",
+    "max_batches": 0,
+    "save": ""
+  },
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130",
+    "cuda": "13.0",
+    "device": "Tesla T4",
+    "device_type": "cuda",
+    "gpu_memory_gb": 14.6,
+    "gpu_capability": "7.5"
+  },
+  "params": 18917458,
+  "meta": {
+    "train_size": 8000,
+    "test_size": 2000,
+    "canvas": 128,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.024,
+      "loss_parts": {
+        "loss_classifier": 1.1051,
+        "loss_box_reg": 0.9037,
+        "loss_objectness": 0.0138,
+        "loss_rpn_box_reg": 0.0014
+      },
+      "label_accuracy": 0.7825,
+      "detection_accuracy": 0.781,
+      "mean_iou": 0.8077,
+      "map50": 0.809,
+      "macro_f1": 0.7724,
+      "lr": 0.00375,
+      "epoch_sec": 94.52
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.2399,
+      "loss_parts": {
+        "loss_classifier": 0.5673,
+        "loss_box_reg": 0.6599,
+        "loss_objectness": 0.0117,
+        "loss_rpn_box_reg": 0.001
+      },
+      "label_accuracy": 0.8685,
+      "detection_accuracy": 0.8685,
+      "mean_iou": 0.8338,
+      "map50": 0.9261,
+      "macro_f1": 0.8676,
+      "lr": 0.00125,
+      "epoch_sec": 92.82
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.778,
+      "loss_parts": {
+        "loss_classifier": 0.2887,
+        "loss_box_reg": 0.4784,
+        "loss_objectness": 0.0102,
+        "loss_rpn_box_reg": 0.0007
+      },
+      "label_accuracy": 0.9365,
+      "detection_accuracy": 0.9365,
+      "mean_iou": 0.8948,
+      "map50": 0.976,
+      "macro_f1": 0.9361,
+      "lr": 0.0,
+      "epoch_sec": 93.68
+    }
+  ],
+  "best": {
+    "epoch": 3,
+    "train_loss": 0.778,
+    "loss_parts": {
+      "loss_classifier": 0.2887,
+      "loss_box_reg": 0.4784,
+      "loss_objectness": 0.0102,
+      "loss_rpn_box_reg": 0.0007
+    },
+    "label_accuracy": 0.9365,
+    "detection_accuracy": 0.9365,
+    "mean_iou": 0.8948,
+    "map50": 0.976,
+    "macro_f1": 0.9361,
+    "lr": 0.0,
+    "epoch_sec": 93.68
+  },
+  "final": {
+    "label_accuracy": 0.9365,
+    "detection_accuracy": 0.9365,
+    "mean_iou": 0.8948,
+    "map50": 0.976,
+    "macro_f1": 0.9361,
+    "per_class": {
+      "precision": [
+        0.0,
+        0.9895,
+        0.9766,
+        0.9223,
+        0.896,
+        0.9035,
+        0.9266,
+        0.9594,
+        0.9655,
+        0.9464,
+        0.8904
+      ],
+      "recall": [
+        0.0,
+        0.9691,
+        0.9812,
+        0.89,
+        0.9577,
+        0.9717,
+        0.9425,
+        0.9545,
+        0.9245,
+        0.8413,
+        0.9269
+      ],
+      "f1": [
+        0.0,
+        0.9792,
+        0.9789,
+        0.9059,
+        0.9258,
+        0.9364,
+        0.9345,
+        0.957,
+        0.9446,
+        0.8908,
+        0.9083
+      ],
+      "support": [
+        0,
+        194,
+        213,
+        200,
+        189,
+        212,
+        174,
+        198,
+        212,
+        189,
+        219
+      ]
+    },
+    "ap_per_class": {
+      "1": 0.9893,
+      "2": 0.9899,
+      "3": 0.9541,
+      "4": 0.9786,
+      "5": 0.9763,
+      "6": 0.9893,
+      "7": 0.9868,
+      "8": 0.9664,
+      "9": 0.9629,
+      "10": 0.9661
+    }
+  },
+  "timing": {
+    "train_sec": 281.03,
+    "eval_sec": 13.75,
+    "sec_per_epoch": 93.68,
+    "ms_per_image": 6.876
+  }
+}

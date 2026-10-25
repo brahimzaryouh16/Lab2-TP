@@ -1,0 +1,221 @@
+{
+  "model": "vit",
+  "task": "classification",
+  "config": {
+    "model": "vit",
+    "data_dir": "/content/lab2/data",
+    "out": "results/vit.json",
+    "epochs": 12,
+    "batch_size": 128,
+    "lr": 0.0003,
+    "weight_decay": 0.05,
+    "train_subset": 0,
+    "test_subset": 0,
+    "img_size": 0,
+    "canvas": 128,
+    "seed": 0,
+    "num_workers": 2,
+    "device": "auto",
+    "label_smoothing": 0.1,
+    "augment": false,
+    "freeze_backbone": false,
+    "optimizer": "adamw",
+    "max_batches": 0,
+    "save": ""
+  },
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130",
+    "cuda": "13.0",
+    "device": "Tesla T4",
+    "device_type": "cuda",
+    "gpu_memory_gb": 14.6,
+    "gpu_capability": "7.5"
+  },
+  "params": 1199882,
+  "meta": {
+    "train_size": 60000,
+    "test_size": 10000,
+    "img_size": 28,
+    "channels": 1,
+    "classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.427,
+      "test_accuracy": 0.8046,
+      "test_macro_f1": 0.7974,
+      "lr": 0.00029489,
+      "epoch_sec": 22.09
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8195,
+      "test_accuracy": 0.927,
+      "test_macro_f1": 0.9266,
+      "lr": 0.0002799,
+      "epoch_sec": 21.48
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.6726,
+      "test_accuracy": 0.9489,
+      "test_macro_f1": 0.9484,
+      "lr": 0.00025607,
+      "epoch_sec": 21.45
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6288,
+      "test_accuracy": 0.9606,
+      "test_macro_f1": 0.9602,
+      "lr": 0.000225,
+      "epoch_sec": 21.61
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6008,
+      "test_accuracy": 0.9693,
+      "test_macro_f1": 0.9691,
+      "lr": 0.00018882,
+      "epoch_sec": 21.6
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.5796,
+      "test_accuracy": 0.9707,
+      "test_macro_f1": 0.9705,
+      "lr": 0.00015,
+      "epoch_sec": 21.54
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5663,
+      "test_accuracy": 0.9753,
+      "test_macro_f1": 0.9752,
+      "lr": 0.00011118,
+      "epoch_sec": 21.81
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.5535,
+      "test_accuracy": 0.9743,
+      "test_macro_f1": 0.9741,
+      "lr": 7.5e-05,
+      "epoch_sec": 21.52
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.5439,
+      "test_accuracy": 0.9777,
+      "test_macro_f1": 0.9775,
+      "lr": 4.393e-05,
+      "epoch_sec": 21.65
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.5362,
+      "test_accuracy": 0.98,
+      "test_macro_f1": 0.9799,
+      "lr": 2.01e-05,
+      "epoch_sec": 21.88
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.5305,
+      "test_accuracy": 0.981,
+      "test_macro_f1": 0.9808,
+      "lr": 5.11e-06,
+      "epoch_sec": 21.65
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.5283,
+      "test_accuracy": 0.9807,
+      "test_macro_f1": 0.9805,
+      "lr": 0.0,
+      "epoch_sec": 21.68
+    }
+  ],
+  "best": {
+    "epoch": 11,
+    "accuracy": 0.981,
+    "macro_f1": 0.9808,
+    "loss": 0.5305
+  },
+  "final": {
+    "per_class": {
+      "precision": [
+        0.9748,
+        0.9947,
+        0.9778,
+        0.9725,
+        0.9835,
+        0.9809,
+        0.9864,
+        0.9891,
+        0.9716,
+        0.9741
+      ],
+      "recall": [
+        0.9888,
+        0.9912,
+        0.9826,
+        0.9812,
+        0.9735,
+        0.9787,
+        0.9833,
+        0.9737,
+        0.9846,
+        0.9683
+      ],
+      "f1": [
+        0.9818,
+        0.9929,
+        0.9802,
+        0.9768,
+        0.9785,
+        0.9798,
+        0.9848,
+        0.9814,
+        0.9781,
+        0.9712
+      ],
+      "support": [
+        980,
+        1135,
+        1032,
+        1010,
+        982,
+        892,
+        958,
+        1028,
+        974,
+        1009
+      ]
+    },
+    "macro_precision": 0.9806,
+    "macro_recall": 0.9806,
+    "macro_f1": 0.9805,
+    "weighted_f1": 0.9807,
+    "accuracy": 0.9807
+  },
+  "timing": {
+    "train_sec": 259.98,
+    "eval_sec": 2.13,
+    "sec_per_epoch": 21.67,
+    "ms_per_image": 0.213
+  }
+}

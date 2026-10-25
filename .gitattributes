@@ -1,0 +1,7 @@
+# Keep shell scripts and sources LF even on Windows checkouts (WSL runs them).
+*.sh   text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.txt  text eol=lf
+*.png  binary
